@@ -32,6 +32,18 @@ namespace SocialMedia.Infrastructure.Repositories
 
         }
 
+        public async Task InsertPost(Post post)
+        {
+            _context.Posts.Add(post);
+            await _context.SaveChangesAsync();
+
+        }
+
+        public bool UpdatePost(Post post)
+        {
+            var currentPost = GetPost(post.PostId);
+        }
+
 
     }
 }
